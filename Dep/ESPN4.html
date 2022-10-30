@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+
+<head>
+<title>REPRODUCTOR</title>
+<meta charset="utf-8" />
+<meta name="robots" content="noindex, nofollow" />
+<script type="text/javascript" src="//ssl.p.jwpcdn.com/player/v/8.21.0/jwplayer.js"></script>
+<script type="text/javascript">jwplayer.key="XSuP4qMl+9tK17QNb+4+th2Pm9AWgMO/cYH8CI0HGGr7bdjo"</script>
+</head>
+<body bgcolor="black"  style="margin:0; padding:0;">
+<div id="player" ></div>
+<script type="text/javascript">
+		var player = jwplayer("player");
+		player.setup({
+			playlist: [{
+				"description": "TV Lat",
+				"sources": [{
+					"default": false,
+					"label": "0",
+					"type": "dash",
+					"file": atob("Ly9kdHZvdHQtY2JjLmFrYW1haXplZC5uZXQvZGFzaF9saXZlXzExMTkvbWFuaWZlc3QubXBk"),
+					"drm": {"clearkey": {"keyId": atob("NTIyMmJkOGMyODk4NTkzOTgyZmMyNTUwZTQ5M2FhNjk="), "key": atob("NTliMjY5YjgwYmVjZDAzNjMwN2E2MDVkOTkzODE2MGY=")}},
+				}]
+			}],
+			width: "100%", height: "100%", aspectratio: "16:9", autostart: true,mute: false
+		});
+
+	</script>
+<script src="/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js" ></script></body>
+</html>
