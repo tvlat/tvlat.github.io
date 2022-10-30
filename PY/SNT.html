@@ -1,7 +1,38 @@
 <!DOCTYPE html>
-<html>
-<body>
-<h1>Hello World PY</h1>
-<p>I'm hosted with GitHub Pages.</p>
+<head>
+</head>
+<body bgcolor="black" style="margin:0; overflow:hidden">
+<script src="//ssl.p.jwpcdn.com/player/v/8.25.7/jwplayer.js"></script>
+  <script src='https://content.jwplatform.com/libraries/KB5zFt7A.js'></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/crypto-js.min.js"></script>
+<script>jwplayer.key = "XSuP4qMl+9tK17QNb+4+th2Pm9AWgMO/cYH8CI0HGGr7bdjo"</script>
+<div id="player"></div>
 </body>
+<script>
+	var playerInstance = jwplayer("player");
+	playerInstance.setup({
+
+    playlist: [{
+
+      "sources": [
+        {
+        "description": "Tv Lat",
+          "default": false,
+          "type": "dash",
+          "file": "https://cdn.cvattv.com.ar/live/c4eds/SNT_C4/SA_Live_dash_enc/SNT_C4.mpd",
+          "drm": {
+            "clearkey": {"keyId": "9f61dcce871cc41aeb206d05028fc30a", "key": "9f6248194a3bf5e35b96b194e8624693"}
+          },
+          "label": "0"
+        }
+      ]
+    }],
+    width: "100%",
+    height: "100%",
+    aspectratio: "16:9",
+    autostart: true,
+    mute: false
+});
+
+</script>
 </html>
