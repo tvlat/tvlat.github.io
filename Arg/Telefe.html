@@ -9,6 +9,7 @@
 <div id="player" style="position: absolute;"></div>
 </body>
 <script type="text/javascript">
+var mt = '//edge-live17-sl';
 		jwplayer("player").setup({
 			playlist: [{
 				 "description": "TV Lat",
@@ -16,8 +17,8 @@
 					"default": true,
 					"label": "0",
 					"type": "dash",
-						"file": ("https://cdn.cvattv.com.ar/live/c3eds/TelefeHD/SA_Live_dash_enc_2A_wl/TelefeHD.mpd"),
-					"drm": {"clearkey": {"keyId": atob("YTMyYzA4MjA5ZDQ0OGNmZmNmMmYzYzMyMTZkMTI5NTM="), "key": atob("YzAwODk0Y2QyNjRmYWIzYzYwNWM2NDZkNjFjOWZiODA=")}}
+						"file":mt+atob("LmN2YXR0di5jb20uYXIvbGl2ZS9jNmVkcy9UZWxlZmVIRC9TQV9MaXZlX2Rhc2hfZW5jL1RlbGVmZUhELm1wZA=="),
+					"drm": {"clearkey": {"keyId": atob("M2MwNjRiYmExZTM3NGU1YTM4MWRkMGEzNDRmMTFjZWM="), "key": atob("YTlkMTliY2EwMTJhZTg0YTZjZDAzOTVhN2E0ODA5ZjI=")}}
 				}]
 			}],
 			width: "100%", height: "100%", aspectratio: "16:9", autostart: true, mute: false 
