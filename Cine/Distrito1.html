@@ -1,0 +1,28 @@
+<html>
+<head>
+<script src="//tvlat.github.io/playerjs.js"></script>
+<script type="text/javascript" src="http://cdn.dashjs.org/latest/dash.all.min.js"></script>
+</head>
+<body bgcolor="black" style="margin:0; overflow:hidden">
+
+<div id="player"></div>
+</body>
+<script type="text/javascript">
+function getParameterByName(name) {
+	name = name.replace(/[\[]/, "\[").replace(/[\]]/, "\]");
+	var regex = new RegExp("[\?&]" + name + "=([^&#]*)"),
+	results = regex.exec(location.search);
+	return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+}
+var mt= getParameterByName('mt');
+var player = new Playerjs({id:"player", file: mt ,autoplay:1,mute:0}
+);
+
+</script>
+</html>
+
+
+<html>
+<head>
+<script src="//tvlat.github.io/playerjs.js"></script>
+<script type="text/javascript" src="http://cdn.dashjs.org/latest/dash.all.min.js"></script>
