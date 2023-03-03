@@ -7,12 +7,21 @@
 <div id="player"></div>
 </body>
 <script>
+	function getParameterByName(name) {
+	name = name.replace(/[\[]/, "\[").replace(/[\]]/, "\]");
+	var regex = new RegExp("[\?&]" + name + "=([^&#]*)"),
+	results = regex.exec(location.search);
+	return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+}
+
+var mt= getParameterByName('mt');
+var playerInstance=jwplayer("player");
 	var playerInstance = jwplayer("player");
 	playerInstance.setup({
 		playlist: [{
         	"description": "Tv Lat",
 			"sources": [{
-				file: "https://edge-vod03-hr.cvattv.com.ar/" +"live/c4eds/TELEFUTURO_C4/SA_Live_dash_enc/TELEFUTURO_C4.mpd",
+				file: mt +".cvattv.com.ar/live/c4eds/TELEFUTURO_C4/SA_Live_dash_enc/TELEFUTURO_C4.mpd",
 				"drm": {
 					"clearkey": {
 						"key": atob("M2Y0MTJmYTYzNjhiN2RiNDkwMzU4OGRlNjk1Mzc3ZTE="),

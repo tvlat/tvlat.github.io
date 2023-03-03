@@ -7,7 +7,14 @@
 <div id="player"></div>
 </body>
 <script type="text/javascript">
-var mt = '//edge-mix01-cen';
+function getParameterByName(name) {
+	name = name.replace(/[\[]/, "\[").replace(/[\]]/, "\]");
+	var regex = new RegExp("[\?&]" + name + "=([^&#]*)"),
+	results = regex.exec(location.search);
+	return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+}
+
+var mt= getParameterByName('mt');
 var playerInstance=jwplayer("player");
 playerInstance.setup({
     playlist: [{

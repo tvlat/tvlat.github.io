@@ -7,8 +7,15 @@
 <div id="player"></div>
 </body>
 <script type="text/javascript">
-		
-		var sd = "//edge-mix01-cen.cvattv.com.ar/",player = jwplayer("player");
+	function getParameterByName(name) {
+	name = name.replace(/[\[]/, "\[").replace(/[\]]/, "\]");
+	var regex = new RegExp("[\?&]" + name + "=([^&#]*)"),
+	results = regex.exec(location.search);
+	return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+}
+
+		var mt= getParameterByName('mt');		
+		var sd = mt+".cvattv.com.ar/",player = jwplayer("player");
 
 		player.setup({
 			playlist: [{

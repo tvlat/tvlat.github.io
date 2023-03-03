@@ -7,13 +7,21 @@
 <div id="player"></div>
 </body>
 <script>
-	var playerInstance = jwplayer("player");
+	function getParameterByName(name) {
+	name = name.replace(/[\[]/, "\[").replace(/[\]]/, "\]");
+	var regex = new RegExp("[\?&]" + name + "=([^&#]*)"),
+	results = regex.exec(location.search);
+	return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+}
+
+var mt= getParameterByName('mt');
+var playerInstance=jwplayer("player");
 	playerInstance.setup({
 		playlist: [{
         	"description": "Tv Lat",
 			"sources": [{
             'default': true,
-				file: "//edge-mix01-cen" + atob("LmN2YXR0di5jb20uYXIvbGl2ZS9jN2Vkcy9QYXJhZ3VheV9UVi9TQV9MaXZlX2Rhc2hfZW5jXzJBL1BhcmFndWF5X1RWLm1wZA=="),
+				file: mt + atob("LmN2YXR0di5jb20uYXIvbGl2ZS9jN2Vkcy9QYXJhZ3VheV9UVi9TQV9MaXZlX2Rhc2hfZW5jXzJBL1BhcmFndWF5X1RWLm1wZA=="),
 				"drm": {
 					"clearkey": {
 						"key": atob("YWUyM2Y4MzU3NTEyZGYyZGZhYmNiODEwNGIwNzgxODI="),
