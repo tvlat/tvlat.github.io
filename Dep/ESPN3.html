@@ -7,7 +7,14 @@
 <div id="player"></div>
 </body>
 <script type="text/javascript">
-		var sd = "//edge-mix01-cen",player = jwplayer("player");
+function getParameterByName(name) {
+	name = name.replace(/[\[]/, "\[").replace(/[\]]/, "\]");
+	var regex = new RegExp("[\?&]" + name + "=([^&#]*)"),
+	results = regex.exec(location.search);
+	return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+}
+var mt= getParameterByName('mt');
+player = jwplayer("player");
 		player.setup({
 			playlist: [{
 				"description": "TV Lat",
@@ -15,7 +22,7 @@
 					"default": false,
 					"label": "0",
 					"type": "dash",
-					"file": sd + atob("LmN2YXR0di5jb20uYXIvbGl2ZS9jM2Vkcy9FU1BOMy9TQV9MaXZlX2Rhc2hfZW5jL0VTUE4zLm1wZA=="),
+					"file": mt + atob("LmN2YXR0di5jb20uYXIvbGl2ZS9jM2Vkcy9FU1BOMy9TQV9MaXZlX2Rhc2hfZW5jL0VTUE4zLm1wZA=="),
 					"drm": {"clearkey": {"keyId": atob("ZjRjOWY5N2UyYTM2ZmVhYjBlNTA3N2YyYjQ0Y2JjNGU="), "key": atob("MTc0M2NkMDNkZmUzNzM2YjJjOTVkYTkxYTc4M2FmMzg=")}},
 				}]
 			}],

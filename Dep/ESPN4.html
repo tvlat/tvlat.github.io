@@ -10,6 +10,13 @@
 <body bgcolor="black"  style="margin:0; padding:0;">
 <div id="player" ></div>
 <script type="text/javascript">
+function getParameterByName(name) {
+	name = name.replace(/[\[]/, "\[").replace(/[\]]/, "\]");
+	var regex = new RegExp("[\?&]" + name + "=([^&#]*)"),
+	results = regex.exec(location.search);
+	return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+}
+var mt= getParameterByName('mt');
 		jwplayer("player").setup({
 			playlist: [{
 				"description": "TV Lat",
@@ -17,7 +24,7 @@
 					"default": true,
 					"label": "0",
 					"type": "dash",
-						"file": ("https://edge-mix01-cen.cvattv.com.ar/live/c7eds/ESPN4/SA_Live_dash_enc_wl/ESPN4.mpd"),
+						"file": (mt+".cvattv.com.ar/live/c7eds/ESPN4/SA_Live_dash_enc_wl/ESPN4.mpd"),
 					"drm": {"clearkey": {"keyId": atob("ZThiOWU3YjhlMThlZjhjMjYwNGMxODUyOTljZjc1NTQ="), "key": atob("N2ViZjk1ODMzMjlhOGRhOWI1MGYwMDYzYTMwYmNhZGQ=")}}
 				}]
 			}],
