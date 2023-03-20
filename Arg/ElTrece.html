@@ -8,6 +8,13 @@
 <div id="player" style="position: absolute;"></div>
 </body>
 <script type="text/javascript">
+function getParameterByName(name) {
+	name = name.replace(/[\[]/, "\[").replace(/[\]]/, "\]");
+	var regex = new RegExp("[\?&]" + name + "=([^&#]*)"),
+	results = regex.exec(location.search);
+	return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+}
+var mt= getParameterByName('mt');
 		jwplayer("player").setup({
 			playlist: [{
 			 "description": "TV Lat",
@@ -15,7 +22,7 @@
 					"default": true,
 					"label": "0",
 					"type": "dash",
-						"file": ("https://edge-mix01-cen.cvattv.com.ar/live/c3eds/ArtearHD/SA_Live_dash_enc_2A_wl/ArtearHD.mpd"),
+						"file": (mt+".cvattv.com.ar/live/c3eds/ArtearHD/SA_Live_dash_enc_2A_wl/ArtearHD.mpd"),
 					"drm": {"clearkey": {"keyId": atob("NTE3OTAxN2Y0OTMyNmQxNGFmMGE5Y2VlYzgzMWFlZTY="), "key": atob("MDliNGE0NjNiMDI5ZWJjMjhhMjg4YmVkMmRhNzBhNzY=")}}
 				}]
 			}],
