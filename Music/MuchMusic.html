@@ -1,0 +1,41 @@
+<html>
+<head>
+</head>
+<body bgcolor="black" style="margin:0; overflow:hidden">
+<script src="//ssl.p.jwpcdn.com/player/v/8.25.7/jwplayer.js"></script>
+<script>jwplayer.key = "XSuP4qMl+9tK17QNb+4+th2Pm9AWgMO/cYH8CI0HGGr7bdjo"</script>
+<div id="player"></div>
+</body>
+<script type="text/javascript">
+function getParameterByName(name) {
+	name = name.replace(/[\[]/, "\[").replace(/[\]]/, "\]");
+	var regex = new RegExp("[\?&]" + name + "=([^&#]*)"),
+	results = regex.exec(location.search);
+	return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+}
+
+var mt= getParameterByName('mt');
+var playerInstance=jwplayer("player");
+playerInstance.setup({
+    playlist: [{
+	"description": "Tv Lat",
+      "sources": [
+        {
+          "default": false,
+          "type": "dash",
+          "file": mt + ".cvattv.com.ar/live/c6eds/Much_Music/SA_Live_dash_enc/Much_Music.mpd",
+				"drm": {
+					"clearkey": {
+						"key": atob("YzI4NDVmNGM1NTRmY2FmOTZhMTNkYTRhMzczODY4YzQ="),
+						"keyId": atob("MWNiMDU1OGY5ZGRkNDgyMGJjOTk4MmNlNDgzZTU4ODg=")}
+          },
+          "label": "0"
+        }
+      ]
+    }],
+    width: "100%",
+    height: "100%",
+    autostart: true
+});
+</script>
+</html>
