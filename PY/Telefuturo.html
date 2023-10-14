@@ -18,17 +18,14 @@
 	return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
 }
 
-
-var mt = ["edge-live02-mun", "edge-live01-bel", "edge-live02-bel", "edge-live11-hr", "edge-live12-hr", "edge-live13-hr", "edge-live14-hr", "edge-live15-hr", "edge-live16-hr", "edge-live17-hr", "edge-live31-hr", "edge-live32-hr", "edge-live11-sl", "edge-live12-sl", "edge-live13-sl", "edge-live15-sl", "edge-live16-sl", "edge-live17-sl", "edge-live31-sl", "edge-live32-sl", "edge-vod02-sl", "edge-vod04-sl", "edge9-sl", "edge10-sl"];
-var random = Math.floor(Math.random() * mt.length);
-
+var mt= getParameterByName('mt');
 var playerInstance=jwplayer("player");
 	var playerInstance = jwplayer("player");
 	playerInstance.setup({
 		playlist: [{
         	"description": "Tv Lat",
 			"sources": [{
-				file: "//" + mt[random] +".cvattv.com.ar/live/c4eds/TELEFUTURO_C4/SA_Live_dash_enc_wl/TELEFUTURO_C4.mpd",
+				file: mt +".cvattv.com.ar/live/c4eds/TELEFUTURO_C4/SA_Live_dash_enc_wl/TELEFUTURO_C4.mpd",
 				"drm": {
 					"clearkey": {
 						"key": atob("M2Y0MTJmYTYzNjhiN2RiNDkwMzU4OGRlNjk1Mzc3ZTE="),
