@@ -1,63 +1,43 @@
 
 <html>
-	<head>
-		
-		<title>tv</title>
-<meta content='width=device-width, initial-scale=1' name='viewport'>	
-<meta http-equiv="Content-Language" content="es" />	
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">	
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-0QDELNE5D8"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+<head>
 
-  gtag('config', 'G-0QDELNE5D8');
-</script>
-	</head>
-
-<body  style="padding: 0px; margin:0px;">
-<script src="https://ssl.p.jwpcdn.com/player/v/8.26.0/jwplayer.js"></script>
+</head>
+<body bgcolor="black" style="margin:0; overflow:hidden">
+<script type="text/javascript" charset="utf-8" async="" src="//ssl.p.jwpcdn.com/player/v/8.26.0/jwpsrv.js"></script>
+<script src="//ssl.p.jwpcdn.com/player/v/8.26.0/jwplayer.js"></script>
 <script> jwplayer.key = 'XSuP4qMl+9tK17QNb+4+th2Pm9AWgMO/cYH8CI0HGGr7bdjo';
 </script>
 <div id="player"></div>
+</body>
 <script>
+	function getParameterByName(name) {
+	name = name.replace(/[\[]/, "\[").replace(/[\]]/, "\]");
+	var regex = new RegExp("[\?&]" + name + "=([^&#]*)"),
+	results = regex.exec(location.search);
+	return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+}
 
-    var playerInstance = jwplayer("player");
-
-    playerInstance.setup({
-
-        playlist: [{
-            "title": "REPRODUCTOR",
-          "description": "EN VIVO",
-            "sources": [
-                {
-                    "default": false,
-                    "type": "dash",
-                    "file": 'https://edge6-hr.cvattv.com.ar/live/c4eds/TELEFUTURO_C4/SA_Live_dash_enc_wl/TELEFUTURO_C4.mpd',
-                    "drm": {
-                        "clearkey": { "keyId": "5d2731cf8a59b73438ef59d88cd882bf", "key": "3f412fa6368b7db4903588de695377e1" }
-                    },
-                    "label": "0"
-                }
-            ]
-        }],
-        width: "100%",
-        height: "100%",
-        aspectratio: "16:9",
-        autostart: true,
-       skin: {
-       name: "black",
-       active: "RED", 
-       inactive: "GOLD",
-       background: "black"
-    }
-       }
-       );
-       
-		jwplayer("player").on("play", function(e){jwplayer("player").setCurrentAudioTrack(1)});
-	</script>
-    <body>
-
+var mt= getParameterByName('mt');
+var playerInstance=jwplayer("player");
+	var playerInstance = jwplayer("player");
+	playerInstance.setup({
+		playlist: [{
+        	"description": "Tv Lat",
+			"sources": [{
+				file: mt +".cvattv.com.ar/live/c4eds/TELEFUTURO_C4/SA_Live_dash_enc_wl/TELEFUTURO_C4.mpd",
+				"drm": {
+					"clearkey": {
+						"key": atob("M2Y0MTJmYTYzNjhiN2RiNDkwMzU4OGRlNjk1Mzc3ZTE="),
+						"keyId": atob("NWQyNzMxY2Y4YTU5YjczNDM4ZWY1OWQ4OGNkODgyYmY=")
+					}
+				},
+			}]
+		}],
+		width: "100%",
+		height: "100%",
+		autostart: true,
+		mute: false
+	});
+</script>
 </html>
